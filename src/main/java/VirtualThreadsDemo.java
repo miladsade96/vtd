@@ -9,4 +9,12 @@ public class VirtualThreadsDemo {
             thread.join();
         }
 
+    }
+
+    public static void usingOfVirtualMethod() throws InterruptedException {
+        for (int i = 0; i < 50000; i++) {
+            Thread.ofVirtual().start(SampleRunnable.task()).join();     // 6990 ms in my machine
+        }
+    }
+
 }

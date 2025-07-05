@@ -17,4 +17,9 @@ public class VirtualThreadsDemo {
         }
     }
 
+    public static void usingStartVirtualThreadMethod() throws InterruptedException {
+        for (int i = 0; i < 50000; i++) {
+            Thread.startVirtualThread(SampleRunnable.task()).join();   // 6162 ms in my machine
+        }
+    }
 }
